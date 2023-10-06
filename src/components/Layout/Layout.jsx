@@ -6,10 +6,11 @@ export const Layout = () => {
   return (
     <div>
       <AppBar />
-      <Suspense fallback={null}>
-        <Outlet />
-      </Suspense>
-      <div>Footer</div>
+      <main>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Outlet />
+        </Suspense>
+      </main>
     </div>
   );
 };
