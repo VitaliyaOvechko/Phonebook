@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
-import { ItemText } from './ContactsListItem.styled';
+import { Text } from '@chakra-ui/react';
 
 export const ContactItem = ({ contact: { name, number } }) => {
   return (
-    <ItemText>
-      {name}: {number}
-    </ItemText>
+    <Text fontSize="xl">
+      {name}: +380{number}
+    </Text>
   );
 };
 

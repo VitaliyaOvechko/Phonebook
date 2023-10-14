@@ -1,10 +1,15 @@
+import { Box, Button, Flex, Spacer } from '@chakra-ui/react';
 import { NavLink } from 'react-router-dom';
 
 export const AuthNav = () => {
   return (
-    <div>
-      <NavLink to="/register">Register</NavLink>
-      <NavLink to="/login">Log In</NavLink>
-    </div>
+    <Flex gap="5">
+      <Button colorScheme="blackAlpha">
+        <NavLink to="/register">Register</NavLink>
+      </Button>
+      <Button colorScheme="blackAlpha">
+        <NavLink to="/login">Log In</NavLink>
+      </Button>
+    </Flex>
   );
 };

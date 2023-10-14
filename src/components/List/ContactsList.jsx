@@ -1,8 +1,9 @@
 import { ContactItem } from '../ListItem/ContactsListItem';
 import { useDispatch, useSelector } from 'react-redux';
-import { DeleteBtn, List, ListItem } from 'components/List/ContactsList.styled';
 import { selectVisibleContact } from 'redux/contacts/selectors';
 import { deleteContact } from 'redux/contacts/operations';
+import { Button, Card, CardBody, Flex, List } from '@chakra-ui/react';
+import { DeleteIcon } from '@chakra-ui/icons';
 
 export const ContactList = () => {
   const dispatch = useDispatch();
@@ -13,12 +14,19 @@ export const ContactList = () => {
   return (
     <List>
       {visibleContacts.map(contact => (
-        <ListItem key={contact.id}>
-          <ContactItem contact={contact} />
-          <DeleteBtn onClick={() => dispatch(deleteContact(contact.id))}>
-            Delete
-          </DeleteBtn>
-        </ListItem>
+        <Card mb="7px" size="sm" variant="outline" color="#3546AB">
+          <CardBody>
+            <Flex key={contact.id} justifyContent="space-between" gap="70px">
+              <ContactItem contact={contact} />
+              <Button
+                colorScheme="orange"
+                variant="ghost"
+                leftIcon={<DeleteIcon />}
+                onClick={() => dispatch(deleteContact(contact.id))}
+              ></Button>
+            </Flex>
+          </CardBody>
+        </Card>
       ))}
     </List>
   );

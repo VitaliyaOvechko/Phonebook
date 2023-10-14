@@ -1,3 +1,4 @@
+import { Button, Flex, Text } from '@chakra-ui/react';
 import { useAuth } from 'hooks/useAuth';
 import { useDispatch } from 'react-redux';
 import { logOut } from 'redux/auth/operations';
@@ -9,11 +10,13 @@ export const UserMenu = () => {
   const handleLogOut = () => dispatch(logOut());
 
   return (
-    <div>
-      <p>Welcome, {user.name}</p>
-      <button type="button" onClick={handleLogOut}>
+    <Flex gap="5" alignItems="center">
+      <Text fontSize="16px" color="#BDBDBD">
+        Welcome,{user.name}
+      </Text>
+      <Button bg="#FF7235" color="white" type="button" onClick={handleLogOut}>
         Logout
-      </button>
-    </div>
+      </Button>
+    </Flex>
   );
 };
