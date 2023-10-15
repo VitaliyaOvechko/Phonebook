@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Spacer } from '@chakra-ui/react';
+import { Button, Flex } from '@chakra-ui/react';
 import { NavLink } from 'react-router-dom';
 
 export const AuthNav = () => {
